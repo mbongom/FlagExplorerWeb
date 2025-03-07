@@ -10,4 +10,4 @@ OMiX coding challenge to create a flag explorer app - Web
 - Onec the above file is opened, make sure that the value of the **FlagExplorerAPI** property (the url) is the same as the base url of the API that is also running locally (e.g. https://localhost:44360/)
 - Navigate to the Terminal menu, then click "New Terminal..." option
 - Type **npm install** to install required packages that are listed in the package.json file (this may take a few minutes to complete)
-- Once the packages have successfully installed, on the same terminal windwo, type **npm start** to launch the application
+- Once the packages have successfully installed, on the same terminal window, type **npm start** to launch the application
