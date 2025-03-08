@@ -1,5 +1,4 @@
-import React, { Suspense } from 'react';
-import logo from './logo.svg';
+import { Suspense } from 'react';
 import './App.css';
 import { OMixLayout } from './layout/OMiXLayout';
 import OMiXSpinner from './layout/OMiXSpinner';
