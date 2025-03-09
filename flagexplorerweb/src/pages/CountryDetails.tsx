@@ -11,12 +11,12 @@ const CountryDetails = () => {
     const[countryDetails, setCountryDetails] = useState<CountryDetailsViewModel>();
 
     const location = useLocation();
+    let name: string = location.state.name;
 
     useEffect(() =>{
         const getCountryDetails = async() => {
             setIsLoading(true);
     
-            let name = location.state.name;
             var url = AppConsts.FlagExplorerAPI + "Countries/" + name;
             await axios.get(url)
                 .then(response => {
@@ -29,7 +29,7 @@ const CountryDetails = () => {
         }
     
         getCountryDetails();
-    }, [])
+    }, [name])
 
     return (
         <div className="container-fluid px-4">
