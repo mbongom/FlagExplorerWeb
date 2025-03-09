@@ -11,3 +11,5 @@ OMiX coding challenge to create a flag explorer app - Web
 - Navigate to the Terminal menu, then click "New Terminal..." option
 - Type **npm install** to install required packages that are listed in the package.json file (this may take a few minutes to complete)
 - Once the packages have successfully installed, on the same terminal window, type **npm start** to launch the application
+
+Quick View  of the App: https://flagexplorer.azurewebsites.net/
