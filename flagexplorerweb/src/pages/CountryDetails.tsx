@@ -13,23 +13,23 @@ const CountryDetails = () => {
     const location = useLocation();
 
     useEffect(() =>{
+        const getCountryDetails = async() => {
+            setIsLoading(true);
+    
+            let name = location.state.name;
+            var url = AppConsts.FlagExplorerAPI + "Countries/" + name;
+            await axios.get(url)
+                .then(response => {
+                    setIsLoading(false)
+                    setCountryDetails(response.data);
+                }).catch((ex) => {
+                    setIsLoading(false);
+                    toast.error(ex);
+                });
+        }
+    
         getCountryDetails();
     }, [])
-
-    const getCountryDetails = async() => {
-        setIsLoading(true);
-
-        let name = location.state.name;
-        var url = AppConsts.FlagExplorerAPI + "Countries/" + name;
-        await axios.get(url)
-            .then(response => {
-                setIsLoading(false)
-                setCountryDetails(response.data);
-            }).catch((ex) => {
-                setIsLoading(false);
-                toast.error(ex);
-            });
-    }
 
     return (
         <div className="container-fluid px-4">
@@ -37,7 +37,7 @@ const CountryDetails = () => {
                 isLoading ?
                 <OMiXSpinner /> :
                 <div>
-                    <img src={countryDetails?.flag} />
+                    <img src={countryDetails?.flag} alt="" />
                     <h3>{countryDetails?.name}</h3>
                     <p>Population: <strong>{countryDetails?.population}</strong></p>
                     <p>Capital: <strong>{countryDetails?.capital}</strong></p>

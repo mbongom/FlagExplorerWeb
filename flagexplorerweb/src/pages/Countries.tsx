@@ -13,22 +13,22 @@ const Countries = () => {
     const[searchCountries, setSearchCountries] = useState<CountryViewModel[]>([]);
 
     useEffect(() => {
+        const getCountries = async() => {
+            setIsLoading(true);
+            var url = AppConsts.FlagExplorerAPI + "Countries";
+            await axios.get(url)
+                .then((respose) => {
+                    setIsLoading(false);
+                    setCountries(respose.data);
+                    setSearchCountries(respose.data);
+                }).catch((ex) => {
+                    setIsLoading(false);
+                    toast.error(ex);
+                });
+        }
+    
         getCountries();
     },[])
-
-    const getCountries = async() => {
-        setIsLoading(true);
-        var url = AppConsts.FlagExplorerAPI + "Countries";
-        await axios.get(url)
-            .then((respose) => {
-                setIsLoading(false);
-                setCountries(respose.data);
-                setSearchCountries(respose.data);
-            }).catch((ex) => {
-                setIsLoading(false);
-                toast.error(ex);
-            });
-    }
 
     const CountrySearch = (value: string) => {
         let filtered = countries.filter(item => item.name.toLowerCase().includes(value.toLowerCase()));
