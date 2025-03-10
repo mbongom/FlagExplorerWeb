@@ -12,4 +12,4 @@ OMiX coding challenge to create a flag explorer app - Web
 - Type **npm install** to install required packages that are listed in the package.json file (this may take a few minutes to complete)
 - Once the packages have successfully installed, on the same terminal window, type **npm start** to launch the application
 
-Quick View  of the App: https://flagexplorer.azurewebsites.net/
+Quick View  of the App: https://flagexplorer.azurewebsites.net/ (Note: This is hosted on a free Azure App Service Plan with limited computing time. If it is accessed frequently, it might stop working with a blue screen. This means that the computing time is depleted and you might have to wait for about an hour to access it again)
